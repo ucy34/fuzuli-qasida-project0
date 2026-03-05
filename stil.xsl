@@ -36,64 +36,36 @@
                         width: 100%; padding: 12px 20px; border-radius: 25px;
                         border: 2px solid var(--border); background: var(--bg-card);
                         color: var(--text-primary); font-size: 16px; outline: none; box-sizing: border-box;
-                        transition: 0.3s;
                     }
-                    #searchInput:focus { border-color: var(--accent); box-shadow: 0 0 10px var(--shadow); }
 
-                    /* GLOSSARY TOOLTIP STYLES */
+                    /* GLOSSARY TOOLTIP */
                     .glossary-term {
                         border-bottom: 2px dotted var(--accent); cursor: help;
                         position: relative; display: inline-block; color: inherit;
                     }
-
                     .glossary-term:hover::after {
                         content: attr(data-meaning); position: absolute;
                         bottom: 125%; left: 50%; transform: translateX(-50%);
                         background-color: #333; color: #fff; padding: 8px 12px;
-                        border-radius: 6px; font-size: 0.85em; white-space: normal;
-                        min-width: 150px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-                        font-family: sans-serif; font-style: normal; text-align: center;
+                        border-radius: 6px; font-size: 0.85em; z-index: 1000; min-width: 150px; text-align: center;
                     }
 
-                    .glossary-term:hover::before {
-                        content: ""; position: absolute;
-                        bottom: 110%; left: 50%; transform: translateX(-50%);
-                        border-width: 8px; border-style: solid;
-                        border-color: #333 transparent transparent transparent; z-index: 1000;
-                    }
-
-                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+                    .nav-controls { display: flex; justify-content: center; gap: 15px; margin-top: 25px; }
                     .btn {
                         background: var(--accent); color: white !important; padding: 10px 18px; 
-                        border-radius: 4px; box-shadow: 0 4px 6px var(--shadow); 
-                        font-weight: bold; cursor: pointer; font-size: 13px; text-align: center;
-                        user-select: none; border: none; transition: 0.2s; text-decoration: none;
+                        border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 13px; text-decoration: none;
                     }
-                    .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    /* ABOUT OVERLAY */
+                    /* ABOUT SECTION */
                     .about-overlay {
                         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); display: none; z-index: 9999; 
                         align-items: center; justify-content: center; backdrop-filter: blur(5px);
                     }
-                    .about-content {
-                        background: var(--bg-card); color: var(--text-primary);
-                        width: 90%; max-width: 850px; max-height: 85vh; padding: 40px; 
-                        border-radius: 8px; position: relative; overflow-y: auto;
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                    }
-                    .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
-                    
-                    .faq-item {
-                        background: var(--note-bg); padding: 20px; border-radius: 6px;
-                        margin-bottom: 20px; border-left: 4px solid var(--accent); text-align: left;
-                    }
-                    .faq-item h3 { margin-top: 0; color: var(--accent); font-size: 1.1em; }
-
                     #aboutToggle:checked ~ .site-wrapper .about-overlay { display: flex !important; }
-                    #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
+                    .about-content { background: var(--bg-card); width: 90%; max-width: 850px; padding: 40px; border-radius: 8px; }
 
+                    #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
                     #langToggle:not(:checked) ~ .site-wrapper .lang-btn:after { content: "Show English Translation"; }
                     #langToggle:checked ~ .site-wrapper .lang-btn:after { content: "Show Turkish Transcription"; }
                     #noteToggle:not(:checked) ~ .site-wrapper .note-btn:after { content: "Show Scholarly Notes"; }
@@ -101,30 +73,29 @@
                     #darkToggle:not(:checked) ~ .site-wrapper .dark-btn:after { content: "🌙 Dark Mode"; }
                     #darkToggle:checked ~ .site-wrapper .dark-btn:after { content: "☀️ Light Mode"; }
 
-                    /* LAYOUT CONTAINERS */
+                    /* PAGE STRUCTURE */
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     .page-container { 
                         display: flex; flex-direction: row; background: var(--bg-card); 
                         margin-bottom: 50px; padding: 25px; border-radius: 8px; 
-                        box-shadow: 0 4px 15px var(--shadow); max-width: 1250px; 
-                        margin-left: auto; margin-right: auto; border: 1px solid var(--border);
+                        max-width: 1250px; margin-left: auto; margin-right: auto; border: 1px solid var(--border);
                     }
-                    .manuscript-side { flex: 0 0 40%; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
-                    .manuscript-side img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
-                    .text-side { flex: 1; padding: 20px 40px; }
+                    .manuscript-side { flex: 0 0 45%; padding: 10px; border-right: 1px solid var(--border); }
+                    .manuscript-side img { width: 100%; border-radius: 4px; }
+                    .text-side { flex: 1; padding: 20px 30px; }
 
-                    /* COUPLET ENGINE - THIS FIXES THE "YAMUK" ISSUE */
+                    /* POETRY ALIGNMENT ENGINE - FIXED MIRROR LAYOUT */
                     .couplet { 
-                        margin-bottom: 45px !important; 
+                        margin-bottom: 35px !important; 
                         padding-bottom: 20px; 
-                        border-bottom: 1px dashed var(--border); 
+                        border-bottom: 1px dashed var(--border);
                         width: 100%;
                     }
                     
                     .tr-text { 
                         display: grid; 
-                        grid-template-columns: 1fr 1fr; /* Two equal columns for hemistichs */
-                        column-gap: 40px; /* Space between hemistich a and b */
+                        grid-template-columns: 1fr 1fr; /* Two symmetrical columns */
+                        column-gap: 40px; /* Consistent space between hemistichs */
                         margin-bottom: 15px;
                     }
 
@@ -133,27 +104,22 @@
                         font-style: italic; 
                         font-size: 1.25em; 
                         line-height: 1.5;
+                        width: 100%;
                     }
 
-                    /* Align hemistich 'a' to the right and 'b' to the left to face each other */
+                    /* Mirror effect: Hemistich 'a' aligns to center-right, 'b' to center-left */
                     .tr-text span:nth-child(1) { text-align: right; }
                     .tr-text span:nth-child(2) { text-align: left; }
 
                     .en-text { 
-                        display: none; 
-                        font-size: 1.1em; 
-                        border-left: 4px solid var(--accent); 
-                        padding: 12px 20px; 
-                        line-height: 1.6;
-                        background: var(--note-bg);
-                        margin-top: 15px;
-                        font-style: normal;
+                        display: none; font-size: 1.1em; border-left: 4px solid var(--accent); 
+                        padding: 10px 20px; background: var(--note-bg); margin-top: 15px;
                     }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 15px;
                         background-color: var(--note-bg); border-left: 4px solid var(--note-border);
-                        font-size: 0.95em; font-family: sans-serif;
+                        font-size: 0.95em;
                     }
                     
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
@@ -161,27 +127,6 @@
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
                     .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; font-size: 1.1em; }
                 </style>
-                
-                <script>
-                    function searchFunction() {
-                        let input = document.getElementById('searchInput').value.toLowerCase();
-                        const normalizeText = (str) => {
-                            return str.toLowerCase().replace(/[āâ]/g, 'a').replace(/[īî]/g, 'i').replace(/[ūû]/g, 'u').replace(/[ḥ]/g, 'h').replace(/[ṣ]/g, 's').replace(/[ż]/g, 'z').replace(/[ṭ]/g, 't').replace(/[’‘']/g, '');
-                        };
-                        let normalizedInput = normalizeText(input);
-                        let couplets = document.getElementsByClassName('couplet');
-                        let pages = document.getElementsByClassName('page-container');
-                        for (let i = 0; i &lt; couplets.length; i++) {
-                            let rawText = couplets[i].innerText;
-                            if (normalizeText(rawText).includes(normalizedInput)) { couplets[i].style.display = ""; } 
-                            else { couplets[i].style.display = "none"; }
-                        }
-                        for (let j = 0; j &lt; pages.length; j++) {
-                            let visibleItems = pages[j].querySelectorAll('.couplet:not([style*="display: none"])');
-                            pages[j].style.display = visibleItems.length === 0 ? "none" : "flex";
-                        }
-                    }
-                </script>
             </head>
             <body>
                 <input type="checkbox" id="langToggle" />
@@ -193,11 +138,9 @@
                     <div class="header-section">
                         <h1 style="color: var(--accent);">Kasîde-i Bahâriyye</h1>
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
-                        
                         <div class="search-section">
-                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, nightingale)..."/>
+                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms..."/>
                         </div>
-
                         <div class="nav-controls">
                             <label for="aboutToggle" class="btn">About This Project</label>
                             <label for="langToggle" class="btn lang-btn"></label>
@@ -208,24 +151,9 @@
 
                     <div class="about-overlay">
                         <div class="about-content">
-                            <label for="aboutToggle" class="close-about">×</label>
-                            <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
-                            <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
-                            
-                            <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
-                            <div class="faq-item">
-                                <h3>1. What is Divan Literature?</h3>
-                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>2. What is a Kaside?</h3>
-                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>3. Who is Fuzuli?</h3>
-                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and mastery of divine love.</p>
-                            </div>
+                            <label for="aboutToggle" style="float:right; cursor:pointer; font-weight:bold;">Close ×</label>
+                            <h2>About This Project</h2>
+                            <p>Developed by Mehmet Eray Avcı and Uğur Can Yıldız for FU Berlin Digital Humanities course.</p>
                         </div>
                     </div>
 
@@ -258,6 +186,16 @@
                         </div>
                     </xsl:for-each>
                 </div>
+                <script>
+                    function searchFunction() {
+                        let input = document.getElementById('searchInput').value.toLowerCase();
+                        let couplets = document.getElementsByClassName('couplet');
+                        for (let i = 0; i &lt; couplets.length; i++) {
+                            if (couplets[i].innerText.toLowerCase().includes(input)) { couplets[i].style.display = ""; } 
+                            else { couplets[i].style.display = "none"; }
+                        }
+                    }
+                </script>
             </body>
         </html>
     </xsl:template>
@@ -267,5 +205,4 @@
             <xsl:value-of select="."/>
         </span>
     </xsl:template>
-
 </xsl:stylesheet>
