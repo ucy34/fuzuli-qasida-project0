@@ -14,38 +14,66 @@
                     }
 
                     #darkToggle:checked ~ .site-wrapper {
-                        --bg-main: #121212 !important;
-                        --bg-card: #1e1e1e !important;
-                        --text-primary: #e0e0e0 !important;
-                        --accent: #ff4d4d !important;
-                        --border: #333 !important;
-                        --note-bg: #252525 !important;
+                        --bg-main: #121212 !important; --bg-card: #1e1e1e !important;
+                        --text-primary: #e0e0e0 !important; --accent: #ff4d4d !important;
+                        --border: #333 !important; --note-bg: #252525 !important;
                     }
 
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); background-color: var(--bg-main); transition: 0.3s; }
                     
                     /* SEARCH SECTION */
-                    .search-section {
-                        max-width: 600px;
-                        margin: 20px auto;
-                    }
+                    .search-section { max-width: 600px; margin: 20px auto; }
                     #searchInput {
-                        width: 100%;
-                        padding: 12px 20px;
-                        border-radius: 25px;
-                        border: 2px solid var(--border);
-                        background: var(--bg-card);
-                        color: var(--text-primary);
-                        font-size: 16px;
-                        outline: none;
+                        width: 100%; padding: 12px 20px; border-radius: 25px;
+                        border: 2px solid var(--border); background: var(--bg-card);
+                        color: var(--text-primary); font-size: 16px; outline: none; box-sizing: border-box;
                         transition: 0.3s;
-                        box-sizing: border-box;
                     }
                     #searchInput:focus { border-color: var(--accent); box-shadow: 0 0 10px var(--shadow); }
 
-                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
+                    /* GLOSSARY TOOLTIP STYLES */
+                    .glossary-term {
+                        border-bottom: 2px dotted var(--accent);
+                        cursor: help;
+                        position: relative;
+                        display: inline-block;
+                        color: inherit;
+                    }
 
+                    .glossary-term:hover::after {
+                        content: attr(data-meaning);
+                        position: absolute;
+                        bottom: 125%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: #333;
+                        color: #fff;
+                        padding: 8px 12px;
+                        border-radius: 6px;
+                        font-size: 0.85em;
+                        white-space: normal;
+                        min-width: 150px;
+                        z-index: 1000;
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                        font-family: sans-serif;
+                        font-style: normal;
+                        text-align: center;
+                    }
+
+                    .glossary-term:hover::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 110%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-width: 8px;
+                        border-style: solid;
+                        border-color: #333 transparent transparent transparent;
+                        z-index: 1000;
+                    }
+
+                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
                     .btn {
                         background: var(--accent); color: white !important; padding: 10px 18px; 
                         border-radius: 4px; box-shadow: 0 4px 6px var(--shadow); 
@@ -94,7 +122,6 @@
                     .text-side { flex: 1; padding: 30px; }
 
                     .couplet { margin-bottom: 50px !important; padding-bottom: 25px; border-bottom: 1px dashed var(--border); display: block; }
-                    .couplet:last-child { border-bottom: none; margin-bottom: 0; }
                     .tr-text { display: block; line-height: 1.8; font-style: italic; font-size: 1.2em; }
                     .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.8; }
                     .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
@@ -114,41 +141,20 @@
                 <script>
                     function searchFunction() {
                         let input = document.getElementById('searchInput').value.toLowerCase();
-                        
-                        const normalizeText = (str) =&gt; {
-                            return str.toLowerCase()
-                                .replace(/[āâ]/g, 'a')
-                                .replace(/[īî]/g, 'i')
-                                .replace(/[ūû]/g, 'u')
-                                .replace(/[ḥ]/g, 'h')
-                                .replace(/[ṣ]/g, 's')
-                                .replace(/[żż]/g, 'z')
-                                .replace(/[ṭ]/g, 't')
-                                .replace(/[’‘']/g, '');
+                        const normalizeText = (str) => {
+                            return str.toLowerCase().replace(/[āâ]/g, 'a').replace(/[īî]/g, 'i').replace(/[ūû]/g, 'u').replace(/[ḥ]/g, 'h').replace(/[ṣ]/g, 's').replace(/[żż]/g, 'z').replace(/[ṭ]/g, 't').replace(/[’‘']/g, '');
                         };
-
                         let normalizedInput = normalizeText(input);
                         let couplets = document.getElementsByClassName('couplet');
                         let pages = document.getElementsByClassName('page-container');
-
                         for (let i = 0; i &lt; couplets.length; i++) {
                             let rawText = couplets[i].innerText;
-                            let normalizedCoupletText = normalizeText(rawText);
-
-                            if (normalizedCoupletText.includes(normalizedInput)) {
-                                couplets[i].style.display = ""; 
-                            } else {
-                                couplets[i].style.display = "none"; 
-                            }
+                            if (normalizeText(rawText).includes(normalizedInput)) { couplets[i].style.display = ""; } 
+                            else { couplets[i].style.display = "none"; }
                         }
-
                         for (let j = 0; j &lt; pages.length; j++) {
                             let visibleItems = pages[j].querySelectorAll('.couplet:not([style*="display: none"])');
-                            if (visibleItems.length === 0) {
-                                pages[j].style.display = "none";
-                            } else {
-                                pages[j].style.display = "flex";
-                            }
+                            pages[j].style.display = visibleItems.length === 0 ? "none" : "flex";
                         }
                     }
                 </script>
@@ -165,7 +171,7 @@
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                         
                         <div class="search-section">
-                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, hülle, Creator)..."/>
+                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, nightingale)..."/>
                         </div>
 
                         <div class="nav-controls">
@@ -210,7 +216,7 @@
                                     <div class="couplet">
                                         <div class="tr-text">
                                             <xsl:for-each select="tei:l">
-                                                <span><xsl:value-of select="."/></span>
+                                                <span><xsl:apply-templates select="node()"/></span>
                                             </xsl:for-each>
                                         </div>
                                         <div class="en-text">
@@ -231,4 +237,11 @@
             </body>
         </html>
     </xsl:template>
+
+    <xsl:template match="tei:term">
+        <span class="glossary-term" data-meaning="{@meaning}">
+            <xsl:value-of select="."/>
+        </span>
+    </xsl:template>
+
 </xsl:stylesheet>
