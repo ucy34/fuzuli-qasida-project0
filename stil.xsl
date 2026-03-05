@@ -158,8 +158,7 @@
                             <div class="page-container">
                                 <div class="manuscript-side">
                                     <img src="{@facs}" alt="Manuscript Page"/>
-                                    <div style="margin-top:10px; font-weight:bold; color:var(--accent);">FOLIO: <xsl:value-of select="@n"/></div>
-                                </div>
+                                    </div>
                                 <div class="text-side">
                                     <xsl:for-each select="following-sibling::tei:div[1]/tei:lg">
                                         <div class="couplet">
