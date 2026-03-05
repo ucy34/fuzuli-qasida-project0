@@ -48,9 +48,6 @@
                         transition: 0.3s;
                         box-shadow: 0 4px 6px var(--shadow);
                     }
-                    #poemSearch:focus {
-                        box-shadow: 0 0 10px var(--accent);
-                    }
 
                     .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; }
 
@@ -64,6 +61,7 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+                    /* ABOUT OVERLAY - ORIGINAL CONTENT PRESERVED */
                     .about-overlay {
                         position: fixed;
                         top: 0; left: 0; width: 100%; height: 100%;
@@ -105,8 +103,7 @@
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
 
-                    .couplet { margin-bottom: 50px !important; padding-bottom: 25px; border-bottom: 1px dashed var(--border); display: block; }
-                    .couplet:last-child { border-bottom: none; margin-bottom: 0; }
+                    .couplet { margin-bottom: 50px !important; padding-bottom: 25px; border-bottom: 1px dashed var(--border); }
                     .tr-text { display: block; line-height: 1.8; font-style: italic; font-size: 1.2em; }
                     .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.8; }
                     .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
@@ -150,8 +147,29 @@
                         <div class="about-content">
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
-                            <p>This website was designed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>.</p>
+                            <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
+                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s. The access to the manuscript is via TBMM Archives: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>. 
+                            It is important to state that this website is a final project, so it is not a commercial website. It is designed for educational purposes only. Our intention was to digitalize a part of Fuzuli's Divan and make it accessible to everyone.</p>
+                            <p>The manuscript we have used is in Ottoman Turkish, but for this website, we have used the transcription of the manuscript in Latin letters. We have also added the English translation of the poem and scholarly notes for the readers to understand the poem better.</p>
+                            
+                            <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
+                            <div class="faq-item">
+                                <h3>1. What is Divan Literature?</h3>
+                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, characterized by its use of Persian and Arabic vocabulary, complex metaphors, and formal structures.</p>
                             </div>
+                            <div class="faq-item">
+                                <h3>2. What is a Kaside?</h3>
+                                <p>A kaside is a long, formal lyric poem in Islamic literatures, typically written in praise of a ruler, a noble, or a religious figure. The specific poem we translated functions as hem a bahâriye hem a tevhid.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>3. Who is Fuzuli?</h3>
+                                <p>Fuzuli (c. 1483–1556) was a 16th-century poet, writer, and thinker who lived in what is now Iraq. He is considered one of the greatest masters of the Divan tradition, known for his deep emotional intensity and mastery of the Turkish, Persian, and Arabic languages.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>4. Why is Digital Humanities Important?</h3>
+                                <p>Digital Humanities combines computing with humanities research to preserve, analyze, and present cultural heritage in innovative ways. This project demonstrates how classical literature can be made interactive and accessible through digital tools like TEI (Text Encoding Initiative) and XSLT.</p>
+                            </div>
+                        </div>
                     </div>
 
                     <xsl:for-each select="//tei:pb">
@@ -200,28 +218,18 @@
                                 couplet.style.display = "none";
                             }
                         });
-                        
-                        // Sayfa konteynırlarını kontrol et (içinde hiç görünür beyit kalmayan sayfaları gizlemek için)
+
                         document.querySelectorAll('.page-container').forEach(page => {
-                            const visibleCouplets = page.querySelectorAll('.couplet[style="display: block;"]').length;
-                            const totalCouplets = page.querySelectorAll('.couplet').length;
-                            // Eğer arama kutusu boşsa her şeyi göster
-                            if(searchTerm === "") {
-                                page.style.display = "flex";
-                                return;
-                            }
-                            // Hiç sonuç yoksa sayfayı gizle
                             const hasVisible = Array.from(page.querySelectorAll('.couplet')).some(c => c.style.display !== "none");
-                            page.style.display = hasVisible ? "flex" : "none";
+                            page.style.display = (searchTerm === "" || hasVisible) ? "flex" : "none";
                         });
                     });
 
                     function normalizeText(text) {
-                        return text.normalize("NFD")
-                                   .replace(/[\u0300-\u036f]/g, "") 
+                        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
                                    .replace(/â/g, "a").replace(/î/g, "i").replace(/û/g, "u")
                                    .replace(/ḥ/g, "h").replace(/ż/g, "z").replace(/ṣ/g, "s")
-                                   .replace(/‘/g, "").replace(/’/g, "")
+                                   .replace(/[‘’'ʻ]/g, "")
                                    .replace(/İ/g, "i").replace(/I/g, "i");
                     }
                 </script>
