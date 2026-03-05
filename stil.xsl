@@ -71,6 +71,7 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
+                    /* ABOUT OVERLAY */
                     .about-overlay {
                         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); display: none; z-index: 9999; 
@@ -100,63 +101,65 @@
                     #darkToggle:not(:checked) ~ .site-wrapper .dark-btn:after { content: "🌙 Dark Mode"; }
                     #darkToggle:checked ~ .site-wrapper .dark-btn:after { content: "☀️ Light Mode"; }
 
+                    /* LAYOUT CONTAINERS */
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     .page-container { 
                         display: flex; flex-direction: row; background: var(--bg-card); 
                         margin-bottom: 50px; padding: 25px; border-radius: 8px; 
-                        box-shadow: 0 4px 15px var(--shadow); max-width: 1200px; 
+                        box-shadow: 0 4px 15px var(--shadow); max-width: 1250px; 
                         margin-left: auto; margin-right: auto; border: 1px solid var(--border);
                     }
-                    .manuscript-side { flex: 1; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
-                    .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
-                    .text-side { flex: 1; padding: 30px; }
+                    .manuscript-side { flex: 0 0 40%; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
+                    .manuscript-side img { width: 100%; border-radius: 4px; border: 1px solid var(--border); }
+                    .text-side { flex: 1; padding: 20px 40px; }
 
-                    /* DÜZELTİLMİŞ BEYİT YAPISI */
+                    /* COUPLET ENGINE - THIS FIXES THE "YAMUK" ISSUE */
                     .couplet { 
-                        margin-bottom: 40px !important; 
+                        margin-bottom: 45px !important; 
                         padding-bottom: 20px; 
                         border-bottom: 1px dashed var(--border); 
+                        width: 100%;
                     }
                     
                     .tr-text { 
-                        display: flex; 
-                        flex-direction: column; 
-                        gap: 10px;
+                        display: grid; 
+                        grid-template-columns: 1fr 1fr; /* Two equal columns for hemistichs */
+                        column-gap: 40px; /* Space between hemistich a and b */
                         margin-bottom: 15px;
                     }
 
                     .tr-text span { 
                         display: block; 
                         font-style: italic; 
-                        font-size: 1.2em; 
-                        line-height: 1.6;
-                        width: 100%;
+                        font-size: 1.25em; 
+                        line-height: 1.5;
                     }
 
-                    /* Birinci mısra sola, ikinci mısra sağa */
-                    .tr-text span:nth-child(1) { text-align: left; padding-right: 20%; }
-                    .tr-text span:nth-child(2) { text-align: right; padding-left: 20%; }
+                    /* Align hemistich 'a' to the right and 'b' to the left to face each other */
+                    .tr-text span:nth-child(1) { text-align: right; }
+                    .tr-text span:nth-child(2) { text-align: left; }
 
                     .en-text { 
                         display: none; 
-                        font-size: 1.05em; 
-                        border-left: 3px solid var(--accent); 
-                        padding: 10px 20px; 
+                        font-size: 1.1em; 
+                        border-left: 4px solid var(--accent); 
+                        padding: 12px 20px; 
                         line-height: 1.6;
                         background: var(--note-bg);
-                        margin-top: 10px;
+                        margin-top: 15px;
+                        font-style: normal;
                     }
 
                     .commentary-box {
-                        display: none; margin-top: 15px; padding: 12px;
+                        display: none; margin-top: 15px; padding: 15px;
                         background-color: var(--note-bg); border-left: 4px solid var(--note-border);
-                        font-size: 0.9em; font-family: sans-serif;
+                        font-size: 0.95em; font-family: sans-serif;
                     }
                     
                     #langToggle:checked ~ .site-wrapper .tr-text { display: none; }
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
-                    .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; }
+                    .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; font-size: 1.1em; }
                 </style>
                 
                 <script>
