@@ -100,8 +100,8 @@
                 
                 <div class="site-wrapper">
                     <div class="header-section">
-                        <h1 style="color: var(--accent); font-size: 2.5em;">Kasîde-i Bahâriyye</h1>
-                        <p>Digital Humanities Project | Fuzûlî Edition</p>
+                        <h1 style="color: var(--accent); font-size: 2.5em;">Kasîde</h1>
+                        <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğurcan Yıldız</p>
                         <div class="search-container">
                             <input type="text" id="poemSearch" placeholder="Search for words (e.g. gül, mey, spring)..." />
                         </div>
