@@ -8,63 +8,50 @@
                 <title>Fuzûlî Digital Edition</title>
                 <style>
                     :root {
-                        --bg-main: #f4f1ea;
-                        --bg-card: #ffffff; 
-                        --text-primary: #2c3e50;
-                        --accent: #800000; 
-                        --border: #ccc; 
-                        --shadow: rgba(0,0,0,0.1);
-                        --note-bg: #f9f9f9; 
-                        --note-border: #3498db;
+                        --bg-main: #f4f1ea; --bg-card: #ffffff; --text-primary: #2c3e50;
+                        --accent: #800000; --border: #ccc; --shadow: rgba(0,0,0,0.1);
+                        --note-bg: #f9f9f9; --note-border: #3498db; --dash-bg: #e9e4d9;
                     }
 
                     #darkToggle:checked ~ .site-wrapper {
-                        --bg-main: #121212 !important;
-                        --bg-card: #1e1e1e !important;
-                        --text-primary: #e0e0e0 !important;
-                        --accent: #ff4d4d !important;
-                        --border: #333 !important;
-                        --note-bg: #252525 !important;
+                        --bg-main: #121212 !important; --bg-card: #1e1e1e !important;
+                        --text-primary: #e0e0e0 !important; --accent: #ff4d4d !important;
+                        --border: #333 !important; --note-bg: #252525 !important; --dash-bg: #2a2a2a;
                     }
 
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); background-color: var(--bg-main); transition: 0.3s; }
                     
-                    /* SEARCH BAR STYLE */
-                    .search-container {
-                        max-width: 600px;
-                        margin: 20px auto;
-                        text-align: center;
+                    /* DASHBOARD STYLE */
+                    .dashboard {
+                        display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                        gap: 15px; max-width: 1200px; margin: 0 auto 30px auto;
                     }
+                    .dash-card {
+                        background: var(--dash-bg); padding: 15px; border-radius: 8px;
+                        text-align: center; border: 1px solid var(--border); box-shadow: 0 2px 5px var(--shadow);
+                    }
+                    .dash-card span { display: block; font-size: 1.8em; font-weight: bold; color: var(--accent); }
+                    .dash-card label { font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; }
+
+                    /* SEARCH BAR */
+                    .search-container { max-width: 600px; margin: 20px auto; text-align: center; }
                     #poemSearch {
-                        width: 100%;
-                        padding: 12px 20px;
-                        border-radius: 25px;
-                        border: 2px solid var(--accent);
-                        background: var(--bg-card);
-                        color: var(--text-primary);
-                        font-size: 16px;
-                        outline: none;
-                        transition: 0.3s;
-                        box-shadow: 0 4px 6px var(--shadow);
+                        width: 100%; padding: 12px 20px; border-radius: 25px; border: 2px solid var(--accent);
+                        background: var(--bg-card); color: var(--text-primary); font-size: 16px; outline: none;
                     }
 
-                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; }
-
+                    .nav-controls { display: flex; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
                     .btn {
-                        background: var(--accent);
-                        color: white !important; padding: 10px 18px; 
-                        border-radius: 4px; box-shadow: 0 4px 6px var(--shadow); 
-                        font-weight: bold; cursor: pointer; font-size: 13px;
-                        text-align: center;
-                        user-select: none; border: none; transition: 0.2s; text-decoration: none;
+                        background: var(--accent); color: white !important; padding: 10px 18px; 
+                        border-radius: 4px; font-weight: bold; cursor: pointer; font-size: 13px;
+                        border: none; transition: 0.2s; text-decoration: none;
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    /* ABOUT OVERLAY - ORIGINAL CONTENT PRESERVED */
+                    /* ABOUT OVERLAY */
                     .about-overlay {
-                        position: fixed;
-                        top: 0; left: 0; width: 100%; height: 100%;
+                        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); display: none; z-index: 9999; 
                         align-items: center; justify-content: center; backdrop-filter: blur(5px);
                     }
@@ -72,15 +59,13 @@
                         background: var(--bg-card); color: var(--text-primary);
                         width: 90%; max-width: 850px; max-height: 85vh; padding: 40px; 
                         border-radius: 8px; position: relative; overflow-y: auto;
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                     }
-                    .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
+                    .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); }
                     
                     .faq-item {
-                        background: var(--note-bg); padding: 20px; border-radius: 6px;
-                        margin-bottom: 20px; border-left: 4px solid var(--accent); text-align: left;
+                        background: var(--note-bg); padding: 15px; border-radius: 6px;
+                        margin-bottom: 15px; border-left: 4px solid var(--accent); text-align: left;
                     }
-                    .faq-item h3 { margin-top: 0; color: var(--accent); font-size: 1.1em; }
 
                     #aboutToggle:checked ~ .site-wrapper .about-overlay { display: flex !important; }
                     #langToggle, #darkToggle, #noteToggle, #aboutToggle { display: none; }
@@ -94,19 +79,18 @@
 
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     .page-container { 
-                        display: flex; flex-direction: row; background: var(--bg-card); 
-                        margin-bottom: 50px; padding: 25px; border-radius: 8px; 
-                        box-shadow: 0 4px 15px var(--shadow); max-width: 1200px; 
+                        display: flex; background: var(--bg-card); margin-bottom: 50px; padding: 25px; 
+                        border-radius: 8px; box-shadow: 0 4px 15px var(--shadow); max-width: 1200px; 
                         margin-left: auto; margin-right: auto; border: 1px solid var(--border);
                     }
                     .manuscript-side { flex: 1; padding: 10px; border-right: 1px solid var(--border); text-align: center; }
-                    .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
+                    .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; }
                     .text-side { flex: 1; padding: 30px; }
 
-                    .couplet { margin-bottom: 50px !important; padding-bottom: 25px; border-bottom: 1px dashed var(--border); }
+                    .couplet { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px dashed var(--border); }
                     .tr-text { display: block; line-height: 1.8; font-style: italic; font-size: 1.2em; }
                     .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.8; }
-                    .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
+                    .tr-text span { display: block; margin-bottom: 8px; }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 12px;
@@ -128,11 +112,26 @@
                 
                 <div class="site-wrapper">
                     <div class="header-section">
-                        <h1 style="color: var(--accent);">Kasîde</h1>
+                        <h1 style="color: var(--accent);">Kasîde-i Bahâriyye</h1>
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                         
+                        <div class="dashboard">
+                            <div class="dash-card">
+                                <span><xsl:value-of select="count(//tei:lg)"/></span>
+                                <label>Total Couplets</label>
+                            </div>
+                            <div class="dash-card">
+                                <span><xsl:value-of select="count(//tei:pb)"/></span>
+                                <label>Manuscript Pages</label>
+                            </div>
+                            <div class="dash-card">
+                                <span><xsl:value-of select="count(//tei:note[@type='commentary'])"/></span>
+                                <label>Scholarly Notes</label>
+                            </div>
+                        </div>
+
                         <div class="search-container">
-                            <input type="text" id="poemSearch" placeholder="Search by keyword, theme or word (e.g. nature, love, bahar)..." />
+                            <input type="text" id="poemSearch" placeholder="Search in transcription or translation (e.g. gül, bahar, light)..." />
                         </div>
 
                         <div class="nav-controls">
@@ -146,28 +145,14 @@
                     <div class="about-overlay">
                         <div class="about-content">
                             <label for="aboutToggle" class="close-about">×</label>
-                            <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
-                            <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s. The access to the manuscript is via TBMM Archives: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>. 
-                            It is important to state that this website is a final project, so it is not a commercial website. It is designed for educational purposes only. Our intention was to digitalize a part of Fuzuli's Divan and make it accessible to everyone.</p>
-                            <p>The manuscript we have used is in Ottoman Turkish, but for this website, we have used the transcription of the manuscript in Latin letters. We have also added the English translation of the poem and scholarly notes for the readers to understand the poem better.</p>
+                            <h2 style="color:var(--accent); border-bottom: 2px solid var(--accent);">About This Project</h2>
+                            <p>This website was designed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong> for Dr. Christian Casey's "Manuscripts and Digital Humanities" course at FU Berlin.</p>
+                            <p>Source: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent);">TBMM Archives</a>.</p>
                             
-                            <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
+                            <h2 style="color:var(--accent); margin-top:30px;">FAQ</h2>
                             <div class="faq-item">
-                                <h3>1. What is Divan Literature?</h3>
-                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, characterized by its use of Persian and Arabic vocabulary, complex metaphors, and formal structures.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>2. What is a Kaside?</h3>
-                                <p>A kaside is a long, formal lyric poem in Islamic literatures, typically written in praise of a ruler, a noble, or a religious figure. The specific poem we translated functions as hem a bahâriye hem a tevhid.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>3. Who is Fuzuli?</h3>
-                                <p>Fuzuli (c. 1483–1556) was a 16th-century poet, writer, and thinker who lived in what is now Iraq. He is considered one of the greatest masters of the Divan tradition, known for his deep emotional intensity and mastery of the Turkish, Persian, and Arabic languages.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>4. Why is Digital Humanities Important?</h3>
-                                <p>Digital Humanities combines computing with humanities research to preserve, analyze, and present cultural heritage in innovative ways. This project demonstrates how classical literature can be made interactive and accessible through digital tools like TEI (Text Encoding Initiative) and XSLT.</p>
+                                <h3>What is a Kaside?</h3>
+                                <p>A kaside is a formal lyric poem, often praising a ruler or religious figure. This specific one by Fuzûlî is a masterpiece of Ottoman literature.</p>
                             </div>
                         </div>
                     </div>
@@ -180,18 +165,18 @@
                             </div>
                             <div class="text-side">
                                 <xsl:for-each select="following-sibling::tei:div[1]/tei:lg">
-                                    <div class="couplet" data-keywords="{@anahtar}">
+                                    <div class="couplet">
                                         <div class="tr-text">
                                             <xsl:for-each select="tei:l">
                                                 <span><xsl:value-of select="."/></span>
                                             </xsl:for-each>
                                         </div>
                                         <div class="en-text">
-                                            <span><xsl:value-of select="tei:note[@type='translation'] | tei:quote"/></span>
+                                            <xsl:value-of select="tei:note[@type='translation']"/>
                                         </div>
                                         <xsl:if test="tei:note[@type='commentary']">
                                             <div class="commentary-box">
-                                                <strong style="color:var(--note-border); font-size:0.8em;">COMMENTARY</strong><br/>
+                                                <strong style="color:var(--note-border); font-size:0.8em;">SCHOLARLY NOTE</strong><br/>
                                                 <xsl:value-of select="tei:note[@type='commentary']"/>
                                             </div>
                                         </xsl:if>
@@ -208,9 +193,8 @@
                         const couplets = document.querySelectorAll('.couplet');
 
                         couplets.forEach(couplet => {
-                            const keywords = couplet.getAttribute('data-keywords') || "";
                             const textContent = couplet.innerText;
-                            const combinedText = normalizeText((keywords + textContent).toLowerCase());
+                            const combinedText = normalizeText(textContent.toLowerCase());
 
                             if (combinedText.includes(searchTerm)) {
                                 couplet.style.display = "block";
@@ -219,9 +203,10 @@
                             }
                         });
 
+                        // Boş kalan sayfaları gizle
                         document.querySelectorAll('.page-container').forEach(page => {
                             const hasVisible = Array.from(page.querySelectorAll('.couplet')).some(c => c.style.display !== "none");
-                            page.style.display = (searchTerm === "" || hasVisible) ? "flex" : "none";
+                            page.style.display = hasVisible ? "flex" : "none";
                         });
                     });
 
