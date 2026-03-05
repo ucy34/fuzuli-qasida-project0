@@ -335,19 +335,17 @@
             </lg>
             <lg n="59" type="couplet">
                <l n="a">Eger lutfı mürebbi olsa bir dāneye</l>
-               <l n="b">Yétürür <term meaning="A very faint star">Süha’yı</term> rütbe-yi <term meaning="The Sun">ḫurşīde</term></l>
+               <l n="b">Yétürür <term meaning="A faint star">Süha’yı</term> rütbe-yi <term meaning="The Sun">ḫurşīde</term></l>
                <note type="translation" xml:lang="en">If His grace were to nurture even a grain for the star Suha, Suha would reach the station of equality with the Sun.</note>
-               <note type="commentary">Astronomy: Suha is a very faint star in Ursa Major, used here to show Divine power to exalt the humble.</note>
             </lg>
             <lg n="60" type="couplet">
                <l n="a">Eger ḳahrı żāhir olsa ‘anāṣır u eflāke</l>
-               <l n="b">Bozar <term meaning="The marriage of planets and elements">‘aḳd-i nikāḥ-ı ābā u ümmehāt</term></l>
-               <note type="translation" xml:lang="en">If His wrath were to manifest upon the elements and the heavens, it would break the marriage bond between the "fathers" (planets) and "mothers" (elements).</note>
-               <note type="commentary">Sufi Cosmology: Planets were considered 'fathers' (aba) and elements 'mothers' (ummehat) in the birth of minerals, plants, and animals.</note>
+               <l n="b">Bozar <term meaning="Marriage of planets and elements">‘aḳd-i nikāḥ-ı ābā u ümmehāt</term></l>
+               <note type="translation" xml:lang="en">If His wrath were to manifest upon the elements and the heavens, it would break the marriage bond between the planets and elements.</note>
             </lg>
             <lg n="61" type="couplet">
                <l n="a">Tamām éylemişdi rızḳ-ı cemī‘-i beşeri</l>
-               <l n="b">Henüz Ḥavvā Ādem’e <term meaning="Joined / Connected">peyveste</term> olmadın</l>
+               <l n="b">Henüz Ḥavvā Ādem’e <term meaning="Joined">peyveste</term> olmadın</l>
                <note type="translation" xml:lang="en">He had completed the calculation of the sustenance for all of humanity before Eve was even joined to Adam.</note>
             </lg>
             <lg n="62" type="couplet">
@@ -364,7 +362,6 @@
                <l n="a">Bıraḫdı bir avuç <term meaning="Dust">ḫāke</term> āteş-i güli</l>
                <l n="b">Kül étdi u adını <term meaning="Frenzied nightingale">bülbül-i şeydā</term> ḳoydı</l>
                <note type="translation" xml:lang="en">He cast the fire of the rose into a handful of dust on the path, turned it to ash, and named it "the frenzied nightingale."</note>
-               <note type="commentary">Mystic Alchemy: The transformation of dust/earth into a longing lover (the nightingale) through divine fire.</note>
             </lg>
             <lg n="65" type="couplet">
                <l n="a">Şevḳ-ı vuslat-ı <term meaning="Dust of His threshold">ḫāk-i āsitānına</term></l>
@@ -378,5 +375,5 @@
             </lg>
          </div>
       </body>
-  </text>
+   </text>
 </TEI>
