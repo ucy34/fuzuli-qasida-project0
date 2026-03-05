@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="stil.xsl"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Fuzûlî - Bahar Kasîdesi (TEI Edition)</title>
+            <author>Fuzûlî</author>
+            <respStmt>
+               <resp>Transcription and TEI Encoding</resp>
+               <name>Eray Avcı &amp; Ugurcan Yildiz</name>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <p>Freie Universität Berlin - Digital Humanities Project (2026)</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Transcribed from manuscript images (image1.png, image2.png, image3.png).</p>
+         </sourceDesc>
+      </fileDesc>
+  </teiHeader>
+  <text>
+      <body>
+         <pb n="1" facs="images/image1.png"/>
+         <div type="page_content" xml:lang="ota-Latn">
+            <lg n="1" type="couplet">
+               <l n="a">Hevâ ‘arāyis-i gülzāre oldı çihre-güşā</l>
+               <l n="b">Bahār gülşene geydürdi hülle-yi ḥażrā</l>
+               <note type="translation" xml:lang="en">The air has unveiled the faces of the brides of the rose garden; Spring has clad the garden in a green, heavenly robe.</note>
+            </lg>
+            <lg n="2" type="couplet">
+               <l n="a">Çemen eyāletine oldı naṣb ḫusrev gül</l>
+               <l n="b">Hevāya ebr ṣıfat ḥükmin étmege icrā</l>
+               <note type="translation" xml:lang="en">The rose, the sovereign, has been appointed to the province of the meadow to execute his decrees in the air, like a cloud.</note>
+            </lg>
+            <lg n="3" type="couplet">
+               <l n="a">Yazıldı sebze-yi nev-ḫīzden ḫaṭṭ-ı aḥkām</l>
+               <l n="b">Çekildi sāye-yi maṭbū‘-ı servden ṭuğrā</l>
+               <note type="translation" xml:lang="en">The decree of laws was written by the newly sprouted greenery, and the royal seal (tughra) was drawn by the graceful shadow of the cypress.</note>
+               <note type="commentary">Metaphorical use of Ottoman bureaucratic terminology ("hatt-ı ahkam", "tughra") to describe nature.</note>
+            </lg>
+            <lg n="4" type="couplet">
+               <l n="a">Şarīr-i āb-ı revān u ṣafīr-i murġ-ı çemen</l>
+               <l n="b">Nükāt-ı tehniye-yi maḳdem étdiler inşā</l>
+               <note type="translation" xml:lang="en">The murmur of flowing water and the whistle of the meadow birds composed nuances of congratulations for this arrival.</note>
+            </lg>
+            <lg n="5" type="couplet">
+               <l n="a">Zebān-ı sūsen-i āzād u sebze-yi nev-ḫīz</l>
+               <l n="b">Şenā-yı rif‘at u iclāle oldılar gūyā</l>
+               <note type="translation" xml:lang="en">The tongue of the free lily and the new greenery became eloquent in praising highness and majesty.</note>
+            </lg>
+            <lg n="6" type="couplet">
+               <l n="a">Şaḳāyıḳ alnı zemīn-būsdan olup mecrūḥ</l>
+               <l n="b">Benefşe ḳāmeti oldı tevāżu‘ ile dü-tā</l>
+               <note type="translation" xml:lang="en">The forehead of the anemone was wounded from kissing the ground, and the stature of the violet became doubled with humility.</note>
+            </lg>
+            <lg n="7" type="couplet">
+               <l n="a">Müretteb eyledi bir bezm gülşen içre bahār</l>
+               <l n="b">Ki vėrdi zevḳ-ı temāşāsı neş’e-yi ṣahbā</l>
+               <note type="translation" xml:lang="en">Spring arranged a banquet within the rose garden; the pleasure of watching it gave the joy of red wine.</note>
+            </lg>
+            <lg n="8" type="couplet">
+               <l n="a">‘Anādil étdi beyān-ı merātib-i naġamāt</l>
+               <l n="b">Ḳamārī oldı terāne-keş ü sürūd-serā</l>
+               <note type="translation" xml:lang="en">The nightingales explained the degrees of melodies, and the turtledove became the singer and the composer of tunes.</note>
+            </lg>
+            <lg n="9" type="couplet">
+               <l n="a">Şadā-yı murġ bıraḫdı büzürg ü küçege şevḳ</l>
+               <l n="b">Sürūd-ı nāyla ‘uşşāḳa ḥāṣıl oldı nevā</l>
+               <note type="translation" xml:lang="en">The sound of the birds sent a longing to the great and the small; with the melody of the reed-flute, a tune was born for the lovers.</note>
+            </lg>
+            <lg n="10" type="couplet">
+               <l n="a">Bilindi ġoncede gül bergi żāhir olmaġla</l>
+               <l n="b">Ki ġonce başına yağdırdı jāle seng-i cefā</l>
+               <note type="translation" xml:lang="en">It became known as the rose petals appeared in the bud; for the dew rained stones of torment upon the bud’s head.</note>
+            </lg>
+            <lg n="11" type="couplet">
+               <l n="a">Cerāḥat olmasa a‘żāda żāhir olmaz ḳan</l>
+               <l n="b">Tereşşuḥ eylemez elbette sınmadın mīnā</l>
+               <note type="translation" xml:lang="en">Unless there is a wound, blood does not appear on the limbs; the wine-glass does not leak, of course, until it is broken.</note>
+            </lg>
+            <lg n="12" type="couplet">
+               <l n="a">Hümāy-veş varaḳ-ı yāsemīn ü berg-i semen</l>
+               <l n="b">Uçup hevāya gülistāna düşdi żıll-ı hümā</l>
+               <note type="translation" xml:lang="en">Like the Huma bird, the jasmine petals and the jasmine leaves flew into the air, and the shadow of the Huma fell upon the rose garden.</note>
+            </lg>
+            <lg n="13" type="couplet">
+               <l n="a">Bahār tāciri mışr-ı çemen ġanīlerine</l>
+               <l n="b">Bıraḫdı Yūsuf-ı gül ‘arż eyleyüp ġavġā</l>
+               <note type="translation" xml:lang="en">The merchant of Spring left the "Joseph of the Rose" to the wealthy of the Meadow-Egypt, causing a great stir.</note>
+               <note type="commentary">Reference to the Quranic story of Joseph (Yusuf) and Egypt (Misr).</note>
+            </lg>
+         </div>
+
+         <pb n="2" facs="images/image2.png"/>
+         <div type="page_content" xml:lang="ota-Latn">
+            <lg n="14" type="couplet">
+               <l n="a">Bu zevḳ ṣaldı Züleyḫā-yı lāleye bir şevḳ</l>
+               <l n="b">Ki la‘l ü müşg töküp vėrdi ağırınca bahā</l>
+               <note type="translation" xml:lang="en">This delight sent a passion to the "Zuleika of the Tulip," who gave a price as heavy as itself by pouring rubies and musk.</note>
+            </lg>
+            <lg n="15" type="couplet">
+               <l n="a">Ḥadīḳa taḥta-yı ta‘līm olup reyāḥīnden</l>
+               <l n="b">Yazıldı mühmel ü mu‘cem aña ḥurūf-ı hecā</l>
+               <note type="translation" xml:lang="en">The garden became a tablet of instruction, and from the aromatic plants, the dotted and undotted letters of the alphabet were written upon it.</note>
+            </lg>
+            <lg n="16" type="couplet">
+               <l n="a">Müzeyyen eyledi evrāḳ-ı lāleyi şebnem</l>
+               <l n="b">Ḥurūf-ı lālede olmaz egerçi noḳṭa revā</l>
+               <note type="translation" xml:lang="en">The dew adorned the leaves of the tulip, even though dots are not permissible on the letters of the "tulip" (in calligraphy).</note>
+               <note type="commentary">Calligraphic allusion: The word 'Lale' (Tulip) in Arabic script does not contain dotted letters.</note>
+            </lg>
+            <lg n="17" type="couplet">
+               <l n="a">Götürdi şebnemi ezhārdan ḥarāret-i mihr</l>
+               <l n="b">Şükūfe noḳṭaların gerçi ḥükm éder imlā</l>
+               <note type="translation" xml:lang="en">The heat of the sun removed the dew from the flowers, even though orthography governs the dots of the blossoms.</note>
+            </lg>
+            <lg n="18" type="couplet">
+               <l n="a">Debīr-i bād vėrüp ṭıfl-ı ‘andelībe sabaḳ</l>
+               <l n="b">Götürdi çihre-yi ezhārdan niḳāb-ı ḫafā</l>
+               <note type="translation" xml:lang="en">The scribe of the wind gave a lesson to the child-nightingale and removed the veil of secrecy from the face of the flowers.</note>
+            </lg>
+            <lg n="19" type="couplet">
+               <l n="a">Ḳamu dıraḫt bulup ref‘-i istiḳāmet-i ḥāl</l>
+               <l n="b">Şükūfe ḥamli ile kesr buldılar illā</l>
+               <note type="translation" xml:lang="en">All the trees found an elevation in their condition, but they were bent by the burden of their blossoms.</note>
+            </lg>
+            <lg n="20" type="couplet">
+               <l n="a">Nihāl-i bī-bedel-i serv kim ḳalup manṣūb</l>
+               <l n="b">Şebāt-ı ḥāl ile anlerden oldı müsteşnā</l>
+               <note type="translation" xml:lang="en">Except for the peerless sapling of the cypress, which, remaining fixed, was excluded from them by its steadfastness.</note>
+            </lg>
+           <lg n="21" type="couplet">
+               <l n="a">Şadā-yı seyl çeker medd-i muttaṣıl ya‘nī</l>
+               <l n="b">Ki medd-i muttaṣıl ile olur ḳırā’at-ı mā</l>
+               <note type="translation" xml:lang="en">The sound of the flood draws a "continuous extension"; that is, the recitation of "Water" occurs with that continuous extension.</note>
+               <note type="commentary">Linguistic and Tajwid allusion: "Medd-i muttasıl" is a rule of Quranic recitation regarding vowel extension.</note>
+            </lg>
+            <lg n="22" type="couplet">
+               <l n="a">Görindi hey’et-i āb-ı revānda şekl-i ḥabāb</l>
+               <l n="b">Şübūta yėtdi şebāt-ı nücūm u seyr-i semā</l>
+               <note type="translation" xml:lang="en">The shape of bubbles appeared in the form of flowing water; thus, the permanence of the stars and the movement of the heavens were proven.</note>
+            </lg>
+            <lg n="23" type="couplet">
+               <l n="a">Ḥuṭūṭ-ı muḫtelif ü müstaḳīmi enhāruñ</l>
+               <l n="b">Çemende ṣaldı zevāyā-yı gūne gūne binā</l>
+               <note type="translation" xml:lang="en">The various and straight lines of the rivers built diverse corners in the meadow.</note>
+               <note type="commentary">Geometry metaphor: Rivers are likened to lines (hutut) and angles (zevaya) in a architectural layout.</note>
+            </lg>
+            <lg n="24" type="couplet">
+               <l n="a">Ri‘āyet-i ṭuruḳ-ı müstaḳīmden nėçe kim</l>
+               <l n="b">Olur ḥuṣūl-i maḳāmāt-ı cennetü’l-me’vā</l>
+               <note type="translation" xml:lang="en">Just as by following the straight paths, one attains the stations of the Paradise of Abode.</note>
+            </lg>
+            <lg n="25" type="couplet">
+               <l n="a">Hevâ-yı bāġdan étdüm bu ḥikmeti ma‘lūm</l>
+               <l n="b">Ki i‘tidāldedür ṣıḥḥat-ı ḥavāss u ḳuvā</l>
+               <note type="translation" xml:lang="en">From the air of the garden, I have learned this wisdom: that the health of senses and faculties lies in moderation.</note>
+            </lg>
+            <lg n="26" type="couplet">
+               <l n="a">Bahār gülşeni ezhārla görüp memlū</l>
+               <l n="b">Yaḳīnüm oldı ki mümkün degül vücūd-ı ḫalā</l>
+               <note type="translation" xml:lang="en">Seeing the garden of spring filled with blossoms, I became certain that a vacuum in existence is impossible.</note>
+               <note type="commentary">Natural philosophy: A reference to the ancient debate on "horror vacui" (nature abhors a vacuum).</note>
+            </lg>
+            <lg n="27" type="couplet">
+               <l n="a">Naẓarda olmaġ ile ṣubḥ u şām ġonce vü gül</l>
+               <l n="b">Bedīhī oldı kemāl ehline ḥuṣūl-i ṣafā</l>
+               <note type="translation" xml:lang="en">By keeping the bud and the rose in sight morning and evening, the attainment of purity became self-evident to the people of perfection.</note>
+            </lg>
+            <lg n="28" type="couplet">
+               <l n="a">Netīce sālibe olmaḳ ḫilāf-ı ‘ādetdür</l>
+               <l n="b">Olınca mūcib-i ṣuġrāya müttefiḳ kübrā</l>
+               <note type="translation" xml:lang="en">It is contrary to the norm for the conclusion to be negative when the major premise agrees with the affirmative minor premise.</note>
+               <note type="commentary">Aristotelian Logic: Reference to the structure of syllogisms (Sughra, Kubra, Natica).</note>
+            </lg>
+            <lg n="29" type="couplet">
+               <l n="a">Żamīr-i gül-büne gül rengi ṣaldı āteş-i bīm</l>
+               <l n="b">Ki ḥumre ḳana olur nefs evinde rāh-nümā</l>
+               <note type="translation" xml:lang="en">The color of the rose cast a fire of fear into the heart of the rose-bush; for redness is a guide to blood in the house of the self.</note>
+            </lg>
+            <lg n="30" type="couplet">
+               <l n="a">Gül āteş üzere ḳılur ‘ıḳd-ı zühre-yi şebnem</l>
+               <l n="b">Tedārik-i ḳamer ü şems éder ṣabāḥ u mesā</l>
+               <note type="translation" xml:lang="en">The rose forms a knot of the "Venus of dew" over the fire; it prepares the moon and the sun morning and evening.</note>
+            </lg>
+            <lg n="31" type="couplet">
+               <l n="a">Bu kīmiyā sebebinden ‘aceb midür olsa</l>
+               <l n="b">Elinde dāne-yi erzen meşābesinde ṭılā</l>
+               <note type="translation" xml:lang="en">Because of this alchemy, is it a wonder if gold, in his hand, becomes like a grain of millet?</note>
+               <note type="commentary">Alchemy allusion: The poet contrasts spiritual value with material gold.</note>
+            </lg>
+            <lg n="32" type="couplet">
+               <l n="a">Şükūfe sīmine farż eyledi ḫurūc-ı zekāt</l>
+               <l n="b">Medār-ı ḥavl u bülūġ niṣāb ü istinmā</l>
+               <note type="translation" xml:lang="en">He made the distribution of alms obligatory upon the silver of the blossoms; based on the criteria of the passing year, maturity, and growth.</note>
+               <note type="commentary">Islamic Jurisprudence (Fiqh): Allusion to the conditions of Zakat (wealth tax).</note>
+            </lg>
+            <lg n="33" type="couplet">
+               <l n="a">Ḥuṭūṭ-ı muḫtelif ü müstaḳīmi enhāruñ</l>
+               <l n="b">Çemende ṣaldı zevāyā-yı gūne gūne binā</l>
+               <note type="translation" xml:lang="en">The various and straight lines of the rivers built diverse corners in the meadow.</note>
+            </lg>
+            <lg n="34" type="couplet">
+               <l n="a">Bahārdan ten-i gül-bünde eyleyüp heyecān</l>
+               <l n="b">Ḥarāret-i demevī ḳıldı ġuddeler peydā</l>
+               <note type="translation" xml:lang="en">Due to spring, excitement rose in the body of the rose-bush, and the sanguine heat caused glands (buds) to appear.</note>
+            </lg>
+            <lg n="35" type="couplet">
+               <l n="a">Boyandı ḳanı ile ṣafḥa-yı çemen gül gül</l>
+               <l n="b">Meger ki faṣlına ḥükm eylemiş ṭabīb-i hevā</l>
+               <note type="translation" xml:lang="en">The page of the meadow was stained rose-red with its blood; perhaps the physician of the air ordered a bloodletting.</note>
+               <note type="commentary">Traditional Medicine: "Fasl" refers to the medical practice of phlebotomy (bloodletting).</note>
+            </lg>
+            <lg n="36" type="couplet">
+               <l n="a">Ḥibāl-i siḥre dönüp cünbiş-i cedāvil-i āb</l>
+               <l n="b">Kelīm-i serv aña ‘aksdin bıraḫdı ‘aṣā</l>
+               <note type="translation" xml:lang="en">The movement of the water streams turned into the ropes of magic; the Moses of the cypress cast his staff against them through its reflection.</note>
+            </lg>
+            <lg n="37" type="couplet">
+               <l n="a">Olup terennüm-i bülbül ‘azāyim-i teshīr</l>
+               <l n="b">Çemen perīlerine lāzım oldı ‘arż-ı liḳā</l>
+               <note type="translation" xml:lang="en">As the nightingale's song became a spell of subjugation, it became necessary for the fairies of the meadow to show their faces.</note>
+            </lg>
+            <lg n="38" type="couplet">
+               <l n="a">Bisāṭ-ı gülşene dün eyledüm güzer ki demi</l>
+               <l n="b">Ḳılam neẓāre-yi āşār-ı ḳudret-i mevlā</l>
+               <note type="translation" xml:lang="en">Yesterday I passed through the carpet of the rose garden so that for a moment I might observe the traces of the Lord's power.</note>
+            </lg>
+            <lg n="39" type="couplet">
+               <l n="a">‘Aceb nizā‘ ile gördüm çemen żarīflerin</l>
+               <l n="b">Ta‘aṣṣub ile ḳamu sālik-i ṭarīḳ-ı ḫatā</l>
+               <note type="translation" xml:lang="en">With wonder, I saw the wits of the meadow in such a dispute; through prejudice, they were all travelers on the path of error.</note>
+            </lg>
+            <lg n="40" type="couplet">
+               <l n="a">Ḳamu gümān ile müsted‘ī-yi ṭarīḳ-ı necāt</l>
+               <l n="b">Velī ḳamusına bāṭıl delīl-i istid‘ā</l>
+               <note type="translation" xml:lang="en">All of them, based on mere suspicion, were seekers of the path of salvation; but for all of them, the evidence of their plea was false.</note>
+            </lg>
+         </div>
+
+         <pb n="3" facs="images/image3.png"/>
+         <div type="page_content" xml:lang="ota-Latn">
+            <lg n="41" type="couplet">
+               <l n="a">Şanup şükūfe mebādī ṣunūf-ı eşcārı</l>
+               <l n="b">Ḳılurdı baḥş ki cā’iz ta‘addüd-i ḳudemā</l>
+               <note type="translation" xml:lang="en">Regarding the blossoms as the principles of the classes of trees, they were debating that the multiplicity of "eternal beings" is permissible.</note>
+               <note type="commentary">Theological-Philosophy: A debate on the nature of 'eternal beings' (Qudema) and the First Cause.</note>
+            </lg>
+            <lg n="42" type="couplet">
+               <l n="a">Vėrüp teselsüle ḳuvvet ṭabī‘at-ı kec-i āb</l>
+               <l n="b">Olurdı nāfī-yi is̱bāt-ı ‘illet-i ūlā</l>
+               <note type="translation" xml:lang="en">The crooked nature of the water, giving strength to infinite regression, was denying the proof of the "First Cause."</note>
+               <note type="commentary">Philosophy: "Illet-i Ula" refers to the Aristotelian First Cause.</note>
+            </lg>
+            <lg n="43" type="couplet">
+               <l n="a">Ḫayāl-i maḥż şanup kāyinātı nergis-i mest</l>
+               <l n="b">Ḳılurdı cehl ile nefy-i ḥaḳāyıḳ-ı eşyā</l>
+               <note type="translation" xml:lang="en">The intoxicated narcissus, thinking the universe to be a pure illusion, was denying the reality of things out of ignorance.</note>
+            </lg>
+            <lg n="44" type="couplet">
+               <l n="a">Bulmadı rāh-ı necāt bülbül-i kāfir-nihād</l>
+               <l n="b">Secde-yi gül ile umup teshīr-i ḥükm-i Hudā</l>
+               <note type="translation" xml:lang="en">The infidel-natured nightingale would prostrate before the rose; hoping for salvation through the worship of an idol.</note>
+            </lg>
+            <lg n="45" type="couplet">
+               <l n="a">Fark étdi saba bu fesādı vėrdi tenbīh</l>
+               <l n="b">Dédi ey cemā‘at-ı perīşān rāh-ı hüdāya gel</l>
+               <note type="translation" xml:lang="en">The breeze became aware of that corruption and forbade it, saying: "O scattered crowd, hold to the path of guidance!"</note>
+            </lg>
+           <lg n="46" type="couplet">
+               <l n="a">Bu kār-ḫāne degül bī-üstad u bī-ṣāni‘</l>
+               <l n="b">Lāzım gelür bir ḥakīm-i ḳādir-i pür-iḳtidār</l>
+               <note type="translation" xml:lang="en">This workshop is not empty of a master; surely, a wise and powerful one is needed for such might.</note>
+            </lg>
+            <lg n="47" type="couplet">
+               <l n="a">Vücūd-ı her masnu‘ delālet éder ‘illetine</l>
+               <l n="b">Līk ne fāyide ki kūr degüldür ehl-i i‘tibār</l>
+               <note type="translation" xml:lang="en">The existence of every created thing points to its cause; but what use is it, for the blind man is not a possessor of insight?</note>
+            </lg>
+            <lg n="48" type="couplet">
+               <l n="a">İcdād-ı cümle-yi mevcudāt o ḳadīmdendür</l>
+               <l n="b">Ki kemāl-i żātına olmaz nihāyet padidār</l>
+               <note type="translation" xml:lang="en">The creation of all beings is from that Eternal One, for whose perfection of essence no end is possible.</note>
+            </lg>
+            <lg n="49" type="couplet">
+               <l n="a">Oldur ḳādir u muḳtedir u ḥayy u ḳayyūm</l>
+               <l n="b">‘Alīm u ‘allām u ḥakīm u müte‘āl</l>
+               <note type="translation" xml:lang="en">He is the Capable, the Omnipotent, the All-Powerful, the Ordainer, and the Living; the All-Knowing, the Knower, the Infinite Knower, the Most Wise, and the Most High.</note>
+               <note type="commentary">Theology: Use of Asma al-Husna (the 99 Names of God) to emphasize divine attributes.</note>
+            </lg>
+            <lg n="50" type="couplet">
+               <l n="a">Ne ṣāni‘-i kāmildür ki ḳudretinden gelür</l>
+               <l n="b">Endām-ı perī-rūlarda lutf-ı tenāsüb</l>
+               <note type="translation" xml:lang="en">What a perfect Creator, that from His power comes the grace of proportion in the limbs of fairy-faced beauties.</note>
+            </lg>
+            <lg n="51" type="couplet">
+               <l n="a">Melaḥat-ı leb-i la‘l ü ḥalāvet-i güftār</l>
+               <l n="b">Zarafet-i ḳadd-i mevzūn u cemāl-i hūb</l>
+               <note type="translation" xml:lang="en">The saltiness of the wine-colored lip and the sweet speech; the elegance of the well-proportioned stature and the beautiful face.</note>
+            </lg>
+            <lg n="52" type="couplet">
+               <l n="a">Nezāfet-i ten-i nāzik ü ḳabūl-i żāt-ı pāk</l>
+               <l n="b">Letāfet-i ḫaṭṭ-ı müşgīn ü zülf-i ‘anber-bār</l>
+               <note type="translation" xml:lang="en">The purity of the graceful body and the acceptance of the pure essence; the beauty of the musk-scented down and the amber-fragrant hair.</note>
+            </lg>
+            <lg n="53" type="couplet">
+               <l n="a">Silsile-yi kār-ḫāne-yi ‘ālem şāhid-i ‘adldür</l>
+               <l n="b">Ber-kemāl-i ḳudret ü ‘ilm-i Hudā</l>
+               <note type="translation" xml:lang="en">The links of the chain of the world's workshop are the witnesses of justice for His perfect power and knowledge.</note>
+            </lg>
+            <lg n="54" type="couplet">
+               <l n="a">Vėrdi ‘anāṣır-ı basīṭe şeref-i üns-i vaḥdet</l>
+               <l n="b">Mürekkebāta ḳabūl-i terkīb-i eczā</l>
+               <note type="translation" xml:lang="en">He gave the honor of the intimacy of unity to the simple elements, and the acceptance of the composition of parts to the complex beings.</note>
+               <note type="commentary">Cosmology: Allusion to the four elements (elements) and the synthesis of complex matter.</note>
+            </lg>
+            <lg n="55" type="couplet">
+               <l n="a">Feyż alup hevā-yı cūdından bahār-ı cān-fezā</l>
+               <l n="b">Mürebbi-yi çemen oldı nesīm-i raḥmet</l>
+               <note type="translation" xml:lang="en">Receiving grace from the air of His generosity, the soul-refreshing spring has become the nurturer of the meadow.</note>
+            </lg>
+            <lg n="56" type="couplet">
+               <l n="a">Bulup ṣaba-yı raḥmetinden feyż-i inşā</l>
+               <l n="b">Cihānı étdi reşk-i cinān bād-ı ṣabāḥ</l>
+               <note type="translation" xml:lang="en">Receiving the expression of bounty from the breeze of His mercy, the morning breeze has made the world the envy of paradise.</note>
+            </lg>
+            <lg n="57" type="couplet">
+               <l n="a">Nüfūz étdi fażl-ı ‘āmı ṭabī‘at-ı nāmide</l>
+               <l n="b">İstid‘ād-ı neşv ü nemāya vėrdi iḳtidār</l>
+               <note type="translation" xml:lang="en">His all-encompassing grace has penetrated and made the growing nature ready for flourishing and growth.</note>
+            </lg>
+            <lg n="58" type="couplet">
+               <l n="a">Feżā-yı gülşen-i lutfı mer‘ā-yı aḥbābdur</l>
+               <l n="b">Meżāyıḳ-ı ḳahrı mehlika-yı eşrār</l>
+               <note type="translation" xml:lang="en">The expanse of the rose garden of His grace is the pasture of friends; the narrow paths of His wrath are the places of destruction for enemies.</note>
+            </lg>
+            <lg n="59" type="couplet">
+               <l n="a">Eger lutfı mürebbi olsa bir dāneye</l>
+               <l n="b">Yétürür Süha’yı rütbe-yi ḫurşīde</l>
+               <note type="translation" xml:lang="en">If His grace were to nurture even a grain for the star Suha, Suha would reach the station of equality with the Sun.</note>
+               <note type="commentary">Astronomy: Suha is a very faint star in Ursa Major, used here to show Divine power to exalt the humble.</note>
+            </lg>
+            <lg n="60" type="couplet">
+               <l n="a">Eger ḳahrı żāhir olsa ‘anāṣır u eflāke</l>
+               <l n="b">Bozar ‘aḳd-i nikāḥ-ı ābā u ümmehāt</l>
+               <note type="translation" xml:lang="en">If His wrath were to manifest upon the elements and the heavens, it would break the marriage bond between the "fathers" (planets) and "mothers" (elements).</note>
+               <note type="commentary">Sufi Cosmology: Planets were considered 'fathers' (aba) and elements 'mothers' (ummehat) in the birth of minerals, plants, and animals.</note>
+            </lg>
+            <lg n="61" type="couplet">
+               <l n="a">Tamām éylemişdi rızḳ-ı cemī‘-i beşeri</l>
+               <l n="b">Henüz Ḥavvā Ādem’e peyveste olmadın</l>
+               <note type="translation" xml:lang="en">He had completed the calculation of the sustenance for all of humanity before Eve was even joined to Adam.</note>
+            </lg>
+            <lg n="62" type="couplet">
+               <l n="a">Yétmişdi beyān-ı ḥāl-i cümle-yi mahlūḳāt</l>
+               <l n="b">Henüz esmā żevātı çekmedin ḥicāba</l>
+               <note type="translation" xml:lang="en">The explanation of the state of all creatures was reached before names even drew the essences into the veil.</note>
+            </lg>
+            <lg n="63" type="couplet">
+               <l n="a">Kemāl-i terbiyeti vėrdi ḫāra reng</l>
+               <l n="b">Lāṭīf eyledi u adını gül-i ra‘nā ḳoydı</l>
+               <note type="translation" xml:lang="en">The perfection of His nurturing gave color to the tip of the thorn; He made it graceful and named it "the lovely rose."</note>
+            </lg>
+            <lg n="64" type="couplet">
+               <l n="a">Bıraḫdı bir avuç ḫāke āteş-i güli</l>
+               <l n="b">Kül étdi u adını bülbül-i şeydā ḳoydı</l>
+               <note type="translation" xml:lang="en">He cast the fire of the rose into a handful of dust on the path, turned it to ash, and named it "the frenzied nightingale."</note>
+               <note type="commentary">Mystic Alchemy: The transformation of dust/earth into a longing lover (the nightingale) through divine fire.</note>
+            </lg>
+            <lg n="65" type="couplet">
+               <l n="a">Şevḳ-ı vuslat-ı ḫāk-i āsitānına</l>
+               <l n="b">Dāmen-i saḥrā elindedür du‘ā-yı baḥrıñ</l>
+               <note type="translation" xml:lang="en">With the longing to reach the dust of His threshold, the edge of the desert is in the hand of the sea's supplication.</note>
+            </lg>
+            <lg n="66" type="couplet">
+               <l n="a">Terk-i ziyāret-i ḥaremi içün seyl tīġin</l>
+               <l n="b">Muḳarrer éyledi deryānuñ sinesine</l>
+               <note type="translation" xml:lang="en">As a punishment for not visiting His sanctuary, He assigned the dagger of the flood to the chest of the sea.</note>
+            </lg>
+         </div>
+      </body>
+  </text>
+</TEI>
