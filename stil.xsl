@@ -25,7 +25,7 @@
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); background-color: var(--bg-main); transition: 0.3s; }
                     
-                    /* ARAMA BÖLÜMÜ */
+                    /* SEARCH SECTION */
                     .search-section {
                         max-width: 600px;
                         margin: 20px auto;
@@ -115,8 +115,7 @@
                     function searchFunction() {
                         let input = document.getElementById('searchInput').value.toLowerCase();
                         
-                        // Transkripsiyon karakterlerini normal harflere çeviren yardımcı fonksiyon
-                        const normalizeText = (str) => {
+                        const normalizeText = (str) =&gt; {
                             return str.toLowerCase()
                                 .replace(/[āâ]/g, 'a')
                                 .replace(/[īî]/g, 'i')
@@ -143,7 +142,6 @@
                             }
                         }
 
-                        // Sayfa içinde hiç görünür beyit kalmadıysa sayfayı gizle
                         for (let j = 0; j &lt; pages.length; j++) {
                             let visibleItems = pages[j].querySelectorAll('.couplet:not([style*="display: none"])');
                             if (visibleItems.length === 0) {
@@ -167,7 +165,7 @@
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                         
                         <div class="search-section">
-                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Kelime ara (Örn: bahar, hülle, rose)..."/>
+                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, nightingale)..."/>
                         </div>
 
                         <div class="nav-controls">
@@ -183,12 +181,20 @@
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
                             <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                            <p>The manuscript access is via TBMM Archives.</p>
+                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM Archives.</p>
                             
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
                             <div class="faq-item">
                                 <h3>1. What is Divan Literature?</h3>
-                                <p>Divan literature is the classical tradition of Ottoman poetry and prose.</p>
+                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>2. What is a Kaside?</h3>
+                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets.</p>
+                            </div>
+                            <div class="faq-item">
+                                <h3>3. Who is Fuzuli?</h3>
+                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition.</p>
                             </div>
                         </div>
                     </div>
