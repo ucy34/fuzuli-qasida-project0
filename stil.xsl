@@ -8,15 +8,23 @@
                 <title>Fuzûlî Digital Edition</title>
                 <style>
                     :root {
-                        --bg-main: #f4f1ea; --bg-card: #ffffff; --text-primary: #2c3e50;
-                        --accent: #800000; --border: #ccc; --shadow: rgba(0,0,0,0.1);
-                        --note-bg: #f9f9f9; --note-border: #3498db;
+                        --bg-main: #f4f1ea;
+                        --bg-card: #ffffff; 
+                        --text-primary: #2c3e50;
+                        --accent: #800000; 
+                        --border: #ccc; 
+                        --shadow: rgba(0,0,0,0.1);
+                        --note-bg: #f9f9f9; 
+                        --note-border: #3498db;
                     }
 
                     #darkToggle:checked ~ .site-wrapper {
-                        --bg-main: #121212 !important; --bg-card: #1e1e1e !important;
-                        --text-primary: #e0e0e0 !important; --accent: #ff4d4d !important;
-                        --border: #333 !important; --note-bg: #252525 !important;
+                        --bg-main: #121212 !important;
+                        --bg-card: #1e1e1e !important;
+                        --text-primary: #e0e0e0 !important; 
+                        --accent: #ff4d4d !important;
+                        --border: #333 !important; 
+                        --note-bg: #252525 !important;
                     }
 
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
@@ -34,43 +42,24 @@
 
                     /* GLOSSARY TOOLTIP STYLES */
                     .glossary-term {
-                        border-bottom: 2px dotted var(--accent);
-                        cursor: help;
-                        position: relative;
-                        display: inline-block;
-                        color: inherit;
+                        border-bottom: 2px dotted var(--accent); cursor: help;
+                        position: relative; display: inline-block; color: inherit;
                     }
 
                     .glossary-term:hover::after {
-                        content: attr(data-meaning);
-                        position: absolute;
-                        bottom: 125%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        background-color: #333;
-                        color: #fff;
-                        padding: 8px 12px;
-                        border-radius: 6px;
-                        font-size: 0.85em;
-                        white-space: normal;
-                        min-width: 150px;
-                        z-index: 1000;
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-                        font-family: sans-serif;
-                        font-style: normal;
-                        text-align: center;
+                        content: attr(data-meaning); position: absolute;
+                        bottom: 125%; left: 50%; transform: translateX(-50%);
+                        background-color: #333; color: #fff; padding: 8px 12px;
+                        border-radius: 6px; font-size: 0.85em; white-space: normal;
+                        min-width: 150px; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                        font-family: sans-serif; font-style: normal; text-align: center;
                     }
 
                     .glossary-term:hover::before {
-                        content: "";
-                        position: absolute;
-                        bottom: 110%;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        border-width: 8px;
-                        border-style: solid;
-                        border-color: #333 transparent transparent transparent;
-                        z-index: 1000;
+                        content: ""; position: absolute;
+                        bottom: 110%; left: 50%; transform: translateX(-50%);
+                        border-width: 8px; border-style: solid;
+                        border-color: #333 transparent transparent transparent; z-index: 1000;
                     }
 
                     .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
@@ -90,7 +79,8 @@
                     .about-content {
                         background: var(--bg-card); color: var(--text-primary);
                         width: 90%; max-width: 850px; max-height: 85vh; padding: 40px; 
-                        border-radius: 8px; position: relative; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                        border-radius: 8px; position: relative; overflow-y: auto;
+                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                     }
                     .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
                     
@@ -121,10 +111,41 @@
                     .manuscript-side img { width: 100%; max-width: 500px; border-radius: 4px; border: 1px solid var(--border); }
                     .text-side { flex: 1; padding: 30px; }
 
-                    .couplet { margin-bottom: 50px !important; padding-bottom: 25px; border-bottom: 1px dashed var(--border); display: block; }
-                    .tr-text { display: block; line-height: 1.8; font-style: italic; font-size: 1.2em; }
-                    .en-text { display: none; font-size: 1.1em; border-left: 5px solid var(--accent); padding-left: 20px; line-height: 1.8; }
-                    .tr-text span, .en-text span { display: block; margin-bottom: 12px; }
+                    /* DÜZELTİLMİŞ BEYİT YAPISI */
+                    .couplet { 
+                        margin-bottom: 40px !important; 
+                        padding-bottom: 20px; 
+                        border-bottom: 1px dashed var(--border); 
+                    }
+                    
+                    .tr-text { 
+                        display: flex; 
+                        flex-direction: column; 
+                        gap: 10px;
+                        margin-bottom: 15px;
+                    }
+
+                    .tr-text span { 
+                        display: block; 
+                        font-style: italic; 
+                        font-size: 1.2em; 
+                        line-height: 1.6;
+                        width: 100%;
+                    }
+
+                    /* Birinci mısra sola, ikinci mısra sağa */
+                    .tr-text span:nth-child(1) { text-align: left; padding-right: 20%; }
+                    .tr-text span:nth-child(2) { text-align: right; padding-left: 20%; }
+
+                    .en-text { 
+                        display: none; 
+                        font-size: 1.05em; 
+                        border-left: 3px solid var(--accent); 
+                        padding: 10px 20px; 
+                        line-height: 1.6;
+                        background: var(--note-bg);
+                        margin-top: 10px;
+                    }
 
                     .commentary-box {
                         display: none; margin-top: 15px; padding: 12px;
@@ -142,7 +163,7 @@
                     function searchFunction() {
                         let input = document.getElementById('searchInput').value.toLowerCase();
                         const normalizeText = (str) => {
-                            return str.toLowerCase().replace(/[āâ]/g, 'a').replace(/[īî]/g, 'i').replace(/[ūû]/g, 'u').replace(/[ḥ]/g, 'h').replace(/[ṣ]/g, 's').replace(/[żż]/g, 'z').replace(/[ṭ]/g, 't').replace(/[’‘']/g, '');
+                            return str.toLowerCase().replace(/[āâ]/g, 'a').replace(/[īî]/g, 'i').replace(/[ūû]/g, 'u').replace(/[ḥ]/g, 'h').replace(/[ṣ]/g, 's').replace(/[ż]/g, 'z').replace(/[ṭ]/g, 't').replace(/[’‘']/g, '');
                         };
                         let normalizedInput = normalizeText(input);
                         let couplets = document.getElementsByClassName('couplet');
