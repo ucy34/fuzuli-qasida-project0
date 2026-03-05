@@ -24,7 +24,27 @@
 
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); background-color: var(--bg-main); transition: 0.3s; }
-                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; }
+                    
+                    /* ARAMA BÖLÜMÜ */
+                    .search-section {
+                        max-width: 600px;
+                        margin: 20px auto;
+                    }
+                    #searchInput {
+                        width: 100%;
+                        padding: 12px 20px;
+                        border-radius: 25px;
+                        border: 2px solid var(--border);
+                        background: var(--bg-card);
+                        color: var(--text-primary);
+                        font-size: 16px;
+                        outline: none;
+                        transition: 0.3s;
+                        box-sizing: border-box;
+                    }
+                    #searchInput:focus { border-color: var(--accent); box-shadow: 0 0 10px var(--shadow); }
+
+                    .nav-controls { display: flex; flex-direction: row; justify-content: center; gap: 15px; margin-top: 25px; flex-wrap: wrap; }
 
                     .btn {
                         background: var(--accent); color: white !important; padding: 10px 18px; 
@@ -46,7 +66,6 @@
                     }
                     .close-about { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
                     
-                    /* FAQ KUTUCUKLARI */
                     .faq-item {
                         background: var(--note-bg); padding: 20px; border-radius: 6px;
                         margin-bottom: 20px; border-left: 4px solid var(--accent); text-align: left;
@@ -91,6 +110,50 @@
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
                     .folio-label { font-weight: bold; color: var(--accent); display: block; margin-top: 15px; }
                 </style>
+                
+                <script>
+                    function searchFunction() {
+                        let input = document.getElementById('searchInput').value.toLowerCase();
+                        
+                        // Transkripsiyon karakterlerini normal harflere çeviren yardımcı fonksiyon
+                        const normalizeText = (str) => {
+                            return str.toLowerCase()
+                                .replace(/[āâ]/g, 'a')
+                                .replace(/[īî]/g, 'i')
+                                .replace(/[ūû]/g, 'u')
+                                .replace(/[ḥ]/g, 'h')
+                                .replace(/[ṣ]/g, 's')
+                                .replace(/[żż]/g, 'z')
+                                .replace(/[ṭ]/g, 't')
+                                .replace(/[’‘']/g, '');
+                        };
+
+                        let normalizedInput = normalizeText(input);
+                        let couplets = document.getElementsByClassName('couplet');
+                        let pages = document.getElementsByClassName('page-container');
+
+                        for (let i = 0; i &lt; couplets.length; i++) {
+                            let rawText = couplets[i].innerText;
+                            let normalizedCoupletText = normalizeText(rawText);
+
+                            if (normalizedCoupletText.includes(normalizedInput)) {
+                                couplets[i].style.display = ""; 
+                            } else {
+                                couplets[i].style.display = "none"; 
+                            }
+                        }
+
+                        // Sayfa içinde hiç görünür beyit kalmadıysa sayfayı gizle
+                        for (let j = 0; j &lt; pages.length; j++) {
+                            let visibleItems = pages[j].querySelectorAll('.couplet:not([style*="display: none"])');
+                            if (visibleItems.length === 0) {
+                                pages[j].style.display = "none";
+                            } else {
+                                pages[j].style.display = "flex";
+                            }
+                        }
+                    }
+                </script>
             </head>
             <body>
                 <input type="checkbox" id="langToggle" />
@@ -100,8 +163,13 @@
                 
                 <div class="site-wrapper">
                     <div class="header-section">
-                        <h1 style="color: var(--accent);">Kasîde</h1>
+                        <h1 style="color: var(--accent);">Kasîde-i Bahâriyye</h1>
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
+                        
+                        <div class="search-section">
+                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Kelime ara (Örn: bahar, hülle, rose)..."/>
+                        </div>
+
                         <div class="nav-controls">
                             <label for="aboutToggle" class="btn">About This Project</label>
                             <label for="langToggle" class="btn lang-btn"></label>
@@ -115,23 +183,16 @@
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
                             <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
+                            <p>The manuscript access is via TBMM Archives.</p>
                             
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
                             <div class="faq-item">
                                 <h3>1. What is Divan Literature?</h3>
-                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>2. What is a Kaside?</h3>
-                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</p>
-                            </div>
-                            <div class="faq-item">
-                                <h3>3. Who is Fuzuli?</h3>
-                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and mastery of divine love.</p>
+                                <p>Divan literature is the classical tradition of Ottoman poetry and prose.</p>
                             </div>
                         </div>
                     </div>
+
                     <xsl:for-each select="//tei:pb">
                         <div class="page-container">
                             <div class="manuscript-side">
