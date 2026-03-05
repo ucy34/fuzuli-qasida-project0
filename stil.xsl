@@ -45,7 +45,7 @@
                     }
                     .modal-content {
                         background: var(--bg-card); color: var(--text-primary);
-                        width: 90%; max-width: 900px; max-height: 85vh; padding: 40px; 
+                        width: 90%; max-width: 800px; max-height: 85vh; padding: 40px; 
                         border-radius: 8px; position: relative; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
                     }
                     .close-modal { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--accent); font-weight: bold; }
@@ -59,12 +59,8 @@
                     .stat-box { background: var(--note-bg); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
                     .stat-box big { display: block; font-size: 2.5em; color: var(--accent); font-weight: bold; }
                     
-                    .word-freq-container { margin-top: 30px; text-align: left; }
-                    .word-tag { 
-                        display: inline-block; background: var(--accent); color: white; 
-                        padding: 3px 8px; margin: 3px; border-radius: 4px; font-size: 0.9em; 
-                    }
-                    .word-count { background: rgba(255,255,255,0.2); padding: 0 5px; margin-left: 5px; border-radius: 3px; font-size: 0.8em; }
+                    .word-tag { display: inline-block; background: var(--accent); color: white; padding: 3px 8px; margin: 3px; border-radius: 4px; font-size: 0.9em; }
+                    .word-count { background: rgba(255,255,255,0.2); padding: 0 5px; margin-left: 5px; border-radius: 3px; }
 
                     .page-container { 
                         display: flex; background: var(--bg-card); margin-bottom: 50px; padding: 25px; 
@@ -90,6 +86,8 @@
                     #noteToggle:checked ~ .site-wrapper .note-btn:after { content: "Hide Notes"; }
                     #darkToggle:not(:checked) ~ .site-wrapper .dark-btn:after { content: "🌙 Dark"; }
                     #darkToggle:checked ~ .site-wrapper .dark-btn:after { content: "☀️ Light"; }
+                    
+                    .faq-section h4 { color: var(--accent); margin-bottom: 5px; margin-top: 20px; border-bottom: 1px solid var(--border); display: inline-block; }
                 ]]>
                 </style>
             </head>
@@ -104,11 +102,9 @@
                     <div class="header-section">
                         <h1 style="color: var(--accent); font-size: 2.5em;">Kasîde-i Bahâriyye</h1>
                         <p>Digital Humanities Project | Fuzûlî Edition</p>
-
                         <div class="search-container">
                             <input type="text" id="poemSearch" placeholder="Search for words (e.g. gül, mey, spring)..." />
                         </div>
-
                         <div class="nav-controls">
                             <label for="dashToggle" class="btn" style="background:#2c3e50;">📊 Open Dashboard</label>
                             <label for="aboutToggle" class="btn">ℹ️ About</label>
@@ -122,25 +118,14 @@
                         <div class="modal-content">
                             <label for="dashToggle" class="close-modal">×</label>
                             <h2 style="color:var(--accent); border-bottom: 2px solid var(--accent); padding-bottom:10px;">Project Statistics</h2>
-                            
                             <div class="stats-grid">
-                                <div class="stat-box">
-                                    <big><xsl:value-of select="count(//tei:lg)"/></big>
-                                    <small>Total Couplets</small>
-                                </div>
-                                <div class="stat-box">
-                                    <big><xsl:value-of select="count(//tei:pb)"/></big>
-                                    <small>Folios</small>
-                                </div>
-                                <div class="stat-box">
-                                    <big><xsl:value-of select="count(//tei:note[@type='commentary'])"/></big>
-                                    <small>Scholarly Notes</small>
-                                </div>
+                                <div class="stat-box"><big><xsl:value-of select="count(//tei:lg)"/></big><small>Total Couplets</small></div>
+                                <div class="stat-box"><big><xsl:value-of select="count(//tei:pb)"/></big><small>Folios</small></div>
+                                <div class="stat-box"><big><xsl:value-of select="count(//tei:note[@type='commentary'])"/></big><small>Notes</small></div>
                             </div>
-
                             <div class="word-freq-container">
                                 <h3 style="color:var(--accent);">Word Frequency (Top Words)</h3>
-                                <div id="wordCloud">Calculating vocabulary...</div>
+                                <div id="wordCloud">Calculating...</div>
                             </div>
                         </div>
                     </div>
@@ -148,8 +133,19 @@
                     <div id="aboutModal" class="modal-overlay">
                         <div class="modal-content">
                             <label for="aboutToggle" class="close-modal">×</label>
-                            <h2 style="color:var(--accent); border-bottom: 2px solid var(--accent);">About This Project</h2>
-                            <p>This digital edition of Fuzûlî's "Bahar Kasîdesi" was developed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong> for the "Manuscripts and Digital Humanities" course at FU Berlin.</p>
+                            <h2 style="color:var(--accent); border-bottom: 2px solid var(--accent); padding-bottom:10px;">About This Project</h2>
+                            <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
+                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisiv.tbmm.gov.tr/" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
+                            
+                            <div class="faq-section" style="margin-top:30px;">
+                                <h3 style="color:var(--accent); border-bottom: 2px solid var(--accent);">FAQ</h3>
+                                <h4>1. What is Divan Literature?</h4>
+                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</p>
+                                <h4>2. What is a Kaside?</h4>
+                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</p>
+                                <h4>3. Who is Fuzuli?</h4>
+                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and mastery of divine love.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -158,7 +154,7 @@
                             <div class="page-container">
                                 <div class="manuscript-side">
                                     <img src="{@facs}" alt="Manuscript Page"/>
-                                    </div>
+                                </div>
                                 <div class="text-side">
                                     <xsl:for-each select="following-sibling::tei:div[1]/tei:lg">
                                         <div class="couplet">
@@ -167,14 +163,9 @@
                                                     <span><xsl:value-of select="."/></span>
                                                 </xsl:for-each>
                                             </div>
-                                            <div class="en-text">
-                                                <xsl:value-of select="tei:note[@type='translation']"/>
-                                            </div>
+                                            <div class="en-text"><xsl:value-of select="tei:note[@type='translation']"/></div>
                                             <xsl:if test="tei:note[@type='commentary']">
-                                                <div class="commentary-box">
-                                                    <strong style="color:var(--note-border);">NOTE:</strong><br/>
-                                                    <xsl:value-of select="tei:note[@type='commentary']"/>
-                                                </div>
+                                                <div class="commentary-box"><strong>NOTE:</strong><br/><xsl:value-of select="tei:note[@type='commentary']"/></div>
                                             </xsl:if>
                                         </div>
                                     </xsl:for-each>
@@ -200,34 +191,17 @@
 
                     function calculateFrequency() {
                         const text = document.getElementById('mainContent').innerText;
-                        const words = text.toLowerCase()
-                                          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
-                                          .split(/\s+/);
-                        
+                        const words = text.toLowerCase().replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"").split(/\s+/);
                         const freq = {};
-                        words.forEach(w => {
-                            if (w.length > 3) {
-                                freq[w] = (freq[w] || 0) + 1;
-                            }
-                        });
-
-                        const sorted = Object.entries(freq)
-                                             .sort((a,b) => b[1] - a[1])
-                                             .slice(0, 30);
-
+                        words.forEach(w => { if (w.length > 3) freq[w] = (freq[w] || 0) + 1; });
+                        const sorted = Object.entries(freq).sort((a,b) => b[1] - a[1]).slice(0, 30);
                         const cloud = document.getElementById('wordCloud');
-                        cloud.innerHTML = sorted.map(([word, count]) => 
-                            `<span class="word-tag">${word} <span class="word-count">${count}</span></span>`
-                        ).join('');
+                        cloud.innerHTML = sorted.map(([word, count]) => `<span class="word-tag">${word} <span class="word-count">${count}</span></span>`).join('');
                     }
 
                     function normalizeText(t) {
-                        return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-                                .replace(/[âā]/g, "a").replace(/[îī]/g, "i").replace(/[ûū]/g, "u")
-                                .replace(/ḥ/g, "h").replace(/ṣ/g, "s").replace(/ż/g, "z")
-                                .replace(/İ/g, "i").replace(/I/g, "i");
+                        return t.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[âā]/g, "a").replace(/[îī]/g, "i").replace(/[ûū]/g, "u").replace(/ḥ/g, "h").replace(/ṣ/g, "s").replace(/ż/g, "z").replace(/İ/g, "i").replace(/I/g, "i");
                     }
-
                     window.onload = calculateFrequency;
                 ]]>
                 </script>
