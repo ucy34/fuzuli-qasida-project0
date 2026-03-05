@@ -7,6 +7,7 @@
             <head>
                 <title>Fuzûlî Digital Edition</title>
                 <style>
+                <![CDATA[
                     :root {
                         --bg-main: #f4f1ea; --bg-card: #ffffff; --text-primary: #2c3e50;
                         --accent: #800000; --border: #ccc; --shadow: rgba(0,0,0,0.2);
@@ -22,7 +23,6 @@
                     body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: var(--bg-main); transition: 0.3s; }
                     .site-wrapper { min-height: 100vh; padding: 20px; color: var(--text-primary); background-color: var(--bg-main); transition: 0.3s; }
                     
-                    /* HEADER & NAV */
                     .header-section { text-align: center; border-bottom: 3px double var(--accent); margin-bottom: 40px; padding: 20px; }
                     .search-container { max-width: 600px; margin: 20px auto; }
                     #poemSearch {
@@ -38,7 +38,6 @@
                     }
                     .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-                    /* MODAL SYSTEM (For Dashboard and About) */
                     .modal-overlay {
                         position: fixed; top: 0; left: 0; width: 100%; height: 100%;
                         background: rgba(0,0,0,0.85); display: none; z-index: 9999; 
@@ -56,7 +55,6 @@
                     
                     #dashToggle, #aboutToggle, #langToggle, #darkToggle, #noteToggle { display: none; }
 
-                    /* DASHBOARD INTERNAL STYLE */
                     .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
                     .stat-box { background: var(--note-bg); padding: 20px; border-radius: 8px; text-align: center; border: 1px solid var(--border); }
                     .stat-box big { display: block; font-size: 2.5em; color: var(--accent); font-weight: bold; }
@@ -68,7 +66,6 @@
                     }
                     .word-count { background: rgba(255,255,255,0.2); padding: 0 5px; margin-left: 5px; border-radius: 3px; font-size: 0.8em; }
 
-                    /* PAGE CONTENT */
                     .page-container { 
                         display: flex; background: var(--bg-card); margin-bottom: 50px; padding: 25px; 
                         border-radius: 8px; box-shadow: 0 4px 15px var(--shadow); max-width: 1200px; 
@@ -87,13 +84,13 @@
                     #langToggle:checked ~ .site-wrapper .en-text { display: block; }
                     #noteToggle:checked ~ .site-wrapper .commentary-box { display: block; }
 
-                    /* BTN TEXTS */
                     #langToggle:not(:checked) ~ .site-wrapper .lang-btn:after { content: "Translation Mode"; }
                     #langToggle:checked ~ .site-wrapper .lang-btn:after { content: "Transcription Mode"; }
                     #noteToggle:not(:checked) ~ .site-wrapper .note-btn:after { content: "Show Notes"; }
                     #noteToggle:checked ~ .site-wrapper .note-btn:after { content: "Hide Notes"; }
                     #darkToggle:not(:checked) ~ .site-wrapper .dark-btn:after { content: "🌙 Dark"; }
                     #darkToggle:checked ~ .site-wrapper .dark-btn:after { content: "☀️ Light"; }
+                ]]>
                 </style>
             </head>
             <body>
@@ -153,7 +150,6 @@
                             <label for="aboutToggle" class="close-modal">×</label>
                             <h2 style="color:var(--accent); border-bottom: 2px solid var(--accent);">About This Project</h2>
                             <p>This digital edition of Fuzûlî's "Bahar Kasîdesi" was developed by <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong> for the "Manuscripts and Digital Humanities" course at FU Berlin.</p>
-                            <p>All transcriptions and encodings follow TEI (Text Encoding Initiative) standards.</p>
                         </div>
                     </div>
 
@@ -190,7 +186,7 @@
                 </div>
 
                 <script>
-                    // 1. SEARCH FUNCTION
+                <![CDATA[
                     document.getElementById('poemSearch').addEventListener('input', function(e) {
                         const s = normalizeText(e.target.value.toLowerCase());
                         document.querySelectorAll('.couplet').forEach(c => {
@@ -203,23 +199,22 @@
                         });
                     });
 
-                    // 2. WORD FREQUENCY CALCULATION (Kelime Sayacı)
                     function calculateFrequency() {
                         const text = document.getElementById('mainContent').innerText;
                         const words = text.toLowerCase()
-                                          .replace(/[.,\/#!$%\^&amp;*;:{}=\-_`~()]/g,"")
+                                          .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"")
                                           .split(/\s+/);
                         
                         const freq = {};
                         words.forEach(w => {
-                            if (w.length > 3) { // 3 harften kısa kelimeleri (ve, ile vs.) atla
+                            if (w.length > 3) {
                                 freq[w] = (freq[w] || 0) + 1;
                             }
                         });
 
                         const sorted = Object.entries(freq)
                                              .sort((a,b) => b[1] - a[1])
-                                             .slice(0, 30); // En çok geçen 30 kelime
+                                             .slice(0, 30);
 
                         const cloud = document.getElementById('wordCloud');
                         cloud.innerHTML = sorted.map(([word, count]) => 
@@ -234,8 +229,8 @@
                                 .replace(/İ/g, "i").replace(/I/g, "i");
                     }
 
-                    // Run frequency calc on load
                     window.onload = calculateFrequency;
+                ]]>
                 </script>
             </body>
         </html>
