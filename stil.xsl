@@ -165,7 +165,7 @@
                         <p>Digital Humanities Edition | Mehmet Eray Avcı &amp; Uğur Can Yıldız</p>
                         
                         <div class="search-section">
-                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, nightingale)..."/>
+                            <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search terms (e.g. spring, rose, hülle, Creator)..."/>
                         </div>
 
                         <div class="nav-controls">
@@ -181,20 +181,20 @@
                             <label for="aboutToggle" class="close-about">×</label>
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px;">About This Project</h2>
                             <p>This website was designed by two FU Berlin ISME Students, namely <strong>Mehmet Eray Avcı</strong> and <strong>Uğur Can Yıldız</strong>. It was developed under the final requirement of Dr. Christian Casey's course "Manuscripts and Digital Humanities."</p>
-                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM Archives.</p>
+                            <p>In this website, one can find three pages from "Külliyat-ı Divan-ı Fuzuli", published in Ottoman Turkish in 1890s, while being originally written in 16th century. The access to the manuscript is via TBMM (Turkish National Grand Assembly) Archives, which can be found through this link: <a href="https://acikarisim.tbmm.gov.tr" target="_blank" style="color:var(--accent); font-weight:bold;">TBMM Open Access</a>.</p>
                             
                             <h2 style="color:var(--accent); text-align:left; border-bottom: 2px solid var(--accent); padding-bottom: 10px; margin-top: 30px;">FAQ</h2>
                             <div class="faq-item">
                                 <h3>1. What is Divan Literature?</h3>
-                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries.</p>
+                                <p>Divan literature is the classical tradition of Ottoman poetry and prose that flourished between the 13th and 19th centuries, heavily shaped by Islamic culture and Persian and Arabic literary models.</p>
                             </div>
                             <div class="faq-item">
                                 <h3>2. What is a Kaside?</h3>
-                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets.</p>
+                                <p>A kaside is a long, formal lyric poem, typically ranging from 33 to 99 couplets. The specific poem we translated functions as both a bahâriye and a tevhid, where the poet uses themes of cosmology, Islamic law (fiqh), and logic to illustrate that the harmony found in nature is undeniable proof of a single, omnipotent Creator.</p>
                             </div>
                             <div class="faq-item">
                                 <h3>3. Who is Fuzuli?</h3>
-                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition.</p>
+                                <p>Fuzuli was a 16th-century poet and one of the greatest masters of the Divan tradition, renowned for his profound emotional depth and mastery of divine love.</p>
                             </div>
                         </div>
                     </div>
